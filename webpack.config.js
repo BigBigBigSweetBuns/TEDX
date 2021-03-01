@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     vendors: ['jquery', 'bootstrap', "popper.js"],
     index: ['./src/pages/index/index.js'],
-    // video: ['./src/pages/video/index.js'],
+    video: ['./src/pages/video/index.js'],
   },
   output: {
     // 公共开头
@@ -35,6 +35,11 @@ module.exports = {
       filename: 'index.html',
       template: './src/pages/index/index.html',
       chunks: ['index', 'vendors',]
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'video.html',
+      template: './src/pages/video/index.html',
+      chunks: ['video', 'vendors',]
     }),
   ],
   module: {
