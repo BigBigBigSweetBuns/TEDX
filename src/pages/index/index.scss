@@ -1,58 +1,85 @@
 @import '/src/main.scss';
 
-header {
-    .bg-dark {
-        background-color: #000 !important;
-    }
+.slidesection {
+    .carousel-inner {
+        >.carousel-item {
+            height          : calc(100vh - 40px);
+            // background-color: #777;
 
-    .navbar {
-        padding-top   : 0;
-        padding-bottom: 0;
-
-        .navbar-brand {
-            padding: 0;
+            >img {
+                min-width: 100%;
+                height   : calc(100vh - 40px);
+                position : absolute;
+                top      : 0%;
+                left     : 0%;
+                // transform : translate(-50%, -50%);
+            }
         }
+
     }
+
 }
 
-.imglist {
-    .card {
-        overflow  : hidden;
-        transition: .5s;
+.box {
+    margin-bottom: 1rem;
 
-        img {
-            width     : 100%;
-            transition: .5s;
-        }
+    >div {
+        display        : flex;
+        justify-content: center;
+    }
 
-        .card-img-overlay {
-            display         : flex;
-            align-items     : center;
-            justify-content : center;
-            background-color: hsla(0, 0, 0, 0);
-            transition      : .5s;
+    h3 {
+        text-align : center;
+        line-height: 4;
+    }
 
-            .card-title {
-                color  : #fff;
-                opacity: 0;
-                transition: opacity .5s;
-            }
+    .imglist {
+        display           : flex;
+        // justify-content: center;
+        flex-wrap         : wrap;
 
-        }
-
-        &:hover {
-            .card-img-overlay {
-                background-color: hsla(0, 0, 0, .7);
-                .card-title{
-                    opacity: 1;
-                }
-            }
+        .card {
+            width   : 20rem;
+            overflow: hidden;
+            margin  : 0 1rem 1rem;
 
             img {
-                transform: scale(1.1);
+                width     : 100%;
+                transition: .5s;
+            }
+
+            .card-img-overlay {
+                display         : flex;
+                justify-content : center;
+                background-color: hsla(0, 0, 0, 0);
+                transition      : .5s;
+
+                .card-title {
+                    color     : #fff;
+                    opacity   : 0;
+                    transition: opacity .5s;
+                    margin    : auto;
+                    position  : absolute;
+                    top       : 50%;
+                    left      : 50%;
+                    transform : translate(-50%, -50%);
+                }
+
+            }
+
+            &:hover {
+                .card-img-overlay {
+                    background-color: hsla(0, 0, 0, .7);
+
+                    .card-title {
+                        opacity: 1;
+                    }
+                }
+
+                img {
+                    transform: scale(1.1);
+                }
             }
         }
     }
-
-
 }

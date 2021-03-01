@@ -1,2 +1,92 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+// font-size
+$font-size-head       : 1.5rem;
+$font-size-title      : 1.2rem;
+$font-size-maincontent: 1.2rem;
+$font-size-content    : 1rem;
+$font-size-secondary  : .8rem;
+$font-size-description: .6rem;
+
+// font-color
+$color-black : #000000;
+$color-semi  : #353535;
+$color-gray  : #888888;
+$color-light : #b2b2b2;
+$color-white : #ffffff;
+
+// background-color
+$bg-color-light : #F8F8F8;
+
+// line-height
+$D-line-height: 1.5;
+
+// 
+$right-color : #09BB07;
+$error-color : #E64340;
+
+//marigin 
+
+// border
+$color-border   : #eeeeee;
+$color-border-D9: #D9D9D9;
+$D-border-radius: 5px;
+
+header {
+    .bg-dark {
+        background-color: #000 !important;
+    }
+
+    .navbar {
+        padding-top   : 0;
+        padding-bottom: 0;
+
+        .navbar-brand {
+            padding: 0;
+        }
+    }
+}
+
+
+footer {
+    height         : 7rem;
+    display        : flex;
+    justify-content: space-between;
+    padding        : 1rem 2%;
+
+    background: {
+        color   : #000000;
+        image   : url(http://www.tedxfutian.com/wp-content/themes/enfold/images/background-images/fullsize-grunge.jpg);
+        position: left top;
+        repeat  : no-repeat;
+    }
+
+    .left {
+        margin-right: 1rem;
+    }
+
+    .right {
+        display        : flex;
+        justify-content: flex-end;
+    }
+
+    p {
+        font-size: $font-size-secondary;
+        color    : $color-white;
+    }
+
+    a {
+        color: $color-white;
+
+        &:hover {
+            color          : $color-white;
+            text-decoration: solid;
+        }
+    }
+
+    img {
+        height      : 100%;
+        margin-right: 1rem;
+    }
+}
