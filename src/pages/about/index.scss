@@ -1,0 +1,29 @@
+@import "/src/main.scss";
+
+.about {
+    padding  : 1rem 0rem;
+    display  : flex;
+    flex-wrap: wrap;
+
+
+    >div {
+        width  : 50%;
+        padding: 0 2em;
+
+        @media screen and (max-width:576px) {
+            width: 100%;
+        }
+    }
+
+    h4 {
+        line-height: 3;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    a {
+        color: red;
+    }
+}

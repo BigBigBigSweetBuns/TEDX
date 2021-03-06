@@ -4,7 +4,7 @@
     width           : 100%;
     background-color: $color-white;
     border-bottom   : 1px solid $color-semi;
-    padding: 2%;
+    padding         : 2%;
 
     .header {
         margin-bottom: 20px;
@@ -42,8 +42,8 @@
         }
 
         .li {
-            width: 20rem;
-            padding: 2%;
+            width  : 20rem;
+            padding: 2rem;
         }
 
         // @media screen and (min-width:768px) {
