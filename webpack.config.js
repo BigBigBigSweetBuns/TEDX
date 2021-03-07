@@ -8,7 +8,9 @@ module.exports = {
   mode: "production",
   //  入口文件
   entry: {
+    // js 插件分类
     vendors: ['jquery', 'bootstrap', "popper.js"],
+    // 页面入口
     index: ['./src/pages/index/index.js'],
     video: ['./src/pages/video/index.js'],
     about: ['./src/pages/about/index.js'],
@@ -22,11 +24,6 @@ module.exports = {
     filename: 'public/js/[name].js',
   },
   plugins: [
-    //  配置 ProvidePlugin 插件加载 jQuery
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
     //  配置 MiniCssExtractPlugin 生成独立的 CSS 文件
     new MiniCssExtractPlugin({
       filename: 'public/css/[name].css',
@@ -109,5 +106,24 @@ module.exports = {
         }]
       }
     ],
+  },
+  // splitChunksPlugin
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 20000,
+      minRemainingSize: 0,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: 1
+        }
+      }
+    },
   },
 };
