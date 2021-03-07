@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ejs = require('ejs');
 
 
 module.exports = {
@@ -14,6 +15,7 @@ module.exports = {
     index: ['./src/pages/index/index.js'],
     video: ['./src/pages/video/index.js'],
     about: ['./src/pages/about/index.js'],
+    about1: ['./src/pages/about/index1.js'],
   },
   output: {
     // 公共开头
@@ -43,6 +45,12 @@ module.exports = {
       filename: 'about.html',
       template: './src/pages/about/index.html',
       chunks: ['about', 'vendors',]
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about1.html',
+      template: '!!ejs-webpack-loader!./src/pages/about/index.ejs',
+      minify: false,
+      chunks: ['about1', 'vendors',]
     }),
   ],
   module: {
@@ -104,6 +112,14 @@ module.exports = {
             publicPath: "./"
           }
         }]
+      },
+      {
+        test: /\.ejs$/,
+        loader: 'ejs-webpack-loader',
+        options: {
+          variable: 'data',
+          htmlmin: true
+        }
       }
     ],
   },
@@ -119,9 +135,10 @@ module.exports = {
       maxInitialRequests: 30,
       enforceSizeThreshold: 50000,
       cacheGroups: {
-        vendors: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: 1
+          priority: -10,
+          reuseExistingChunk: true,
         },
         commons: {
           name: 'commons',    //提取出来的文件命名
