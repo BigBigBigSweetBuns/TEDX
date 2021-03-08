@@ -4,7 +4,10 @@
     padding  : 1rem 0rem;
     display  : flex;
     flex-wrap: wrap;
-
+    margin: 0 auto;
+    @media screen and (min-width:1500px) {
+       width: 1500px; 
+    }
 
     >div {
         width  : 50%;
@@ -12,7 +15,7 @@
 
         @media screen and (max-width:576px) {
             width  : 100%;
-            padding: 0;
+            padding: 0 1em;
         }
     }
 

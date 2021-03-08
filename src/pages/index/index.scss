@@ -3,16 +3,15 @@
 .slidesection {
     .carousel-inner {
         >.carousel-item {
-            height          : calc(100vh - 40px);
-            // background-color: #777;
+            height: calc(100vh - 40px);
 
             >img {
                 min-width: 100%;
                 height   : calc(100vh - 40px);
+                object-fit: cover;
                 position : absolute;
                 top      : 0%;
                 left     : 0%;
-                // transform : translate(-50%, -50%);
             }
         }
 
@@ -29,19 +28,26 @@
     }
 
     h3 {
-        text-align : center;
-        line-height: 4;
+        text-align: center;
+        padding   : 3em 1rem;
     }
 
     .imglist {
-        display           : flex;
-        // justify-content: center;
-        flex-wrap         : wrap;
+        display  : flex;
+        flex-wrap: wrap;
 
-        .card {
-            width   : 20rem;
-            overflow: hidden;
-            margin  : 0 1rem 1rem;
+        .card-box {
+            margin: 0 auto 1rem;
+
+            .card {
+                width   : 20rem;
+                overflow: hidden;
+                margin  : 0 1rem;
+
+                @media screen and(width:576px) {
+                    width: 100%;
+                }
+            }
 
             img {
                 width     : 100%;
