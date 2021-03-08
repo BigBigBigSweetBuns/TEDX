@@ -14,7 +14,7 @@ module.exports = {
     // 页面入口
     index: ['./src/pages/index/index.js'],
     video: ['./src/pages/video/index.js'],
-    about: ['./src/pages/about/index.js'],
+    abouts: ['./src/pages/abouts/index.js'],
   },
   output: {
     // 公共开头
@@ -41,9 +41,9 @@ module.exports = {
       chunks: ['video', 'vendors',]
     }),
     new HtmlWebpackPlugin({
-      filename: 'about.html',
-      template: './src/pages/about/index.ejs',
-      chunks: ['about', 'vendors',],
+      filename: 'abouts.html',
+      template: './src/pages/abouts/index.ejs',
+      chunks: ['abouts', 'vendors',],
       inject: true
     }),
   ],
