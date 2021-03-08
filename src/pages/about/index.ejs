@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <%= require("./header.ejs")() %>
+    <%= require("/src/components/header/header.ejs")() %>
         <section class="about">
             <div>
                 <h4>SPEAKER/讲者组</h4>
@@ -48,6 +48,7 @@
                 </div>
             </div>
         </section>
+       <%= require("/src/components/footer/footer.ejs")() %> 
 </body>
 
 </html>

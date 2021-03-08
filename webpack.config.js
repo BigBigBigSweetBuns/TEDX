@@ -15,7 +15,6 @@ module.exports = {
     index: ['./src/pages/index/index.js'],
     video: ['./src/pages/video/index.js'],
     about: ['./src/pages/about/index.js'],
-    about1: ['./src/pages/about/index1.js'],
   },
   output: {
     // 公共开头
@@ -33,24 +32,19 @@ module.exports = {
     // // 匹配生成不同的html页面
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/pages/index/index.html',
+      template: './src/pages/index/index.ejs',
       chunks: ['index', 'vendors',]
     }),
     new HtmlWebpackPlugin({
       filename: 'video.html',
-      template: './src/pages/video/index.html',
+      template: './src/pages/video/index.ejs',
       chunks: ['video', 'vendors',]
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
-      template: './src/pages/about/index.html',
-      chunks: ['about', 'vendors',]
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'about1.html',
       template: './src/pages/about/index.ejs',
-      chunks: ['about1', 'vendors',],
-      inject:true
+      chunks: ['about', 'vendors',],
+      inject: true
     }),
   ],
   module: {
@@ -111,7 +105,7 @@ module.exports = {
             limit: 8192,
             name: 'images/[name].[ext]',
             publicPath: "./",
-            esModule:false
+            esModule: false
           }
         }]
       },

@@ -1,0 +1,43 @@
+@import "/src/main.scss";
+
+.page-footer {
+    height         : 7rem;
+    display        : flex;
+    justify-content: space-between;
+    padding        : 1rem 2%;
+
+    background: {
+        color   : #000000;
+        image   : url(http://www.tedxfutian.com/wp-content/themes/enfold/images/background-images/fullsize-grunge.jpg);
+        position: left top;
+        repeat  : no-repeat;
+    }
+
+    .left {
+        margin-right: 1rem;
+    }
+
+    .right {
+        display        : flex;
+        justify-content: flex-end;
+    }
+
+    p {
+        font-size: $font-size-secondary;
+        color    : $color-white;
+    }
+
+    a {
+        color: $color-white;
+
+        &:hover {
+            color          : $color-white;
+            text-decoration: solid;
+        }
+    }
+
+    img {
+        height      : 100%;
+        margin-right: 1rem;
+    }
+}

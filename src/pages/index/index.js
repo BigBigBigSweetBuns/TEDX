@@ -1,7 +1,3 @@
-import './index.scss';
-$(document).ready(function () {
-    // $("p").click(function () {
-    //     $(this).hide();
-    // });
-    $("#page1").load("./temp.html");
-});
+import "./index.scss";
+import "/src/components/header/header.js";
+import "/src/components/footer/footer.js";

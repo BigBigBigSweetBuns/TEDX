@@ -1,0 +1,16 @@
+@import "/src/main.scss";
+
+.page-header {
+    .bg-dark {
+        background-color: #000 !important;
+    }
+
+    .navbar {
+        padding-top   : 0;
+        padding-bottom: 0;
+
+        .navbar-brand {
+            padding: 0;
+        }
+    }
+}
