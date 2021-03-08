@@ -1,7 +1,7 @@
 @import "/src/main.scss";
 
 .page-footer {
-    height         : 7rem;
+    min-height     : 7rem;
     display        : flex;
     justify-content: space-between;
     padding        : 1rem 2%;
@@ -13,13 +13,24 @@
         repeat  : no-repeat;
     }
 
+
     .left {
         margin-right: 1rem;
     }
 
     .right {
-        display        : flex;
-        justify-content: flex-end;
+        max-height: 7rem;
+        text-align: right;
+    }
+
+    @media screen and(max-width:576px) {
+        flex-wrap: wrap;
+
+        .left,
+        .right {
+            width     : 100%;
+            text-align: center;
+        }
     }
 
     p {
