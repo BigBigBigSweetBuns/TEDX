@@ -48,9 +48,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'about1.html',
-      template: '!!ejs-webpack-loader!./src/pages/about/index.ejs',
-      minify: false,
-      chunks: ['about1', 'vendors',]
+      template: './src/pages/about/index.ejs',
+      chunks: ['about1', 'vendors',],
+      inject:true
     }),
   ],
   module: {
@@ -61,6 +61,7 @@ module.exports = {
         use: [{
           loader: "html-loader",
           options: {
+            // attrs:['img:src'],
           }
         }]
       },
@@ -109,17 +110,17 @@ module.exports = {
           options: {
             limit: 8192,
             name: 'images/[name].[ext]',
-            publicPath: "./"
+            publicPath: "./",
+            esModule:false
           }
         }]
       },
       {
         test: /\.ejs$/,
-        loader: 'ejs-webpack-loader',
-        options: {
-          variable: 'data',
-          htmlmin: true
-        }
+        exclude: /node_modules/,
+        use: [{
+          loader: 'underscore-template-loader',
+        }]
       }
     ],
   },
